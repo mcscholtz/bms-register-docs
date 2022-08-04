@@ -4,7 +4,7 @@ then
 	| grep -o 'https://[^"]*' \
 	| grep -o -E 'https.+docs_develop.tar.xz$' \
 	| wget --verbose --header "Circle-Token: $CIRCLE_TOKEN" -O docs.tar.xz -v -i -
-elif [[ $HEAD -eq "master" ]]
+elif [[ $HEAD -eq "main" ]]
 then
 	curl https://circleci.com/api/v1.1/project/github/ricelectronics/BMS/latest/artifacts?circle-token=$CIRCLE_TOKEN \
 	| grep -o 'https://[^"]*' \
